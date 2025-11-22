@@ -9,7 +9,7 @@
 }
 
 body {
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     min-height: 100vh;
 }
 
@@ -41,4 +41,154 @@ body {
 .header .link-container li {
     color: #e5e7eb;
     font-size: 18px;
+}
+
+/* MAIN TOP*/
+.top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1f2937;
+    color: #f9faf8;
+    height: 500px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    gap: 15px;
+    margin-left: 230px;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 250px;
+    margin-right: 230px;
+    background-color: slategray;
+}
+
+.left .hero-text {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.left .button {
+    background-color: #3882f6;
+    color: #f9faf8;
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* MAIN MIDDLE */
+.middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 500px;
+    margin-bottom: 50px;
+}
+
+.middle h2 {
+    font-size: 36px;
+    color: #1f2937;
+    font-weight: 900;
+}
+
+.boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.img-box {
+    border: 5px solid #3882f6;
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+.box p {
+    width: 200px;
+    text-align: center;
+}
+
+/* QUOTE SECTION */
+.quote-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: #e5e7eb;
+
+    height: 500px;
+
+    font-style: italic;
+    font-size: 24px;
+}
+
+.quote-section p {
+    width: 530px;
+}
+
+.quote-section .thor {
+    margin-left: 680px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* CALL TO ACTION SECTION */
+.call-to-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    color: #fff;
+}
+
+.call-to-action-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: #3882f6;
+    border-radius: 5px;
+
+    width: 1000px;
+    height: 200px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.call-to-action-container .button {
+    background-color: #3882f6;
+    color: #f9faf8;
+    height: 30px;
+    width: 100px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #1f2937;
+
+    height: 100px;
+    color: #fff;
 }
