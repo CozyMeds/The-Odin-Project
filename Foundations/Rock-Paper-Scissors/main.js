@@ -1,6 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
-
 function getComputerChoice() {
 	const min = 1;
 	const max = 3;
@@ -22,26 +19,46 @@ function getHumanChoice() {
 	return response;
 }
 
-function playRound(humanChoice, computerChoice) {
-	if (humanChoice === computerChoice || computerChoice === humanChoice) {
-		return 'Tie';
-	} 
-	else if ( 
-		(humanChoice === 'rock' && computerChoice === 'scissors') || 
-		(humanChoice === 'paper' && computerChoice === 'rock') || 
-		(humanChoice === 'scissors' && computerChoice === 'paper')) {
-		return "Player Wins";
-	}
-	else {
-		return "Computer Wins";
+function playGame() {
+	let humanScore = 0;
+	let computerScore = 0;
+
+	let counter = 0;
+
+
+	function playRound() {
+		let humanChoice = getHumanChoice();
+		let computerChoice = getComputerChoice();
+
+		if (humanChoice === computerChoice || computerChoice === humanChoice) {
+			return 'Tie';
+		} 
+		else if ( 
+			(humanChoice === 'rock' && computerChoice === 'scissors') || 
+			(humanChoice === 'paper' && computerChoice === 'rock') || 
+			(humanChoice === 'scissors' && computerChoice === 'paper')) {
+				humanScore++
+				return "Player Wins";
+		}
+		else {
+			computerScore++;
+			return "Computer Wins";
+		}	
 	}
 
-	
+	while (counter <= 4) {
+		counter++;
+		console.log(`Round: ${counter}\n${playRound()}`);
+	}
+
+	//Get Winner
+	if (humanScore === computerScore || computerScore === humanScore) {
+		return 'Tie';
+	} else if (humanScore > computerScore) {
+		return 'Player Wins';
+	} else {
+		return 'Computer Wins';
+	}
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-console.log(`Player: ${humanSelection}\nComputer: ${computerSelection}`);
-
-console.log(playRound(humanSelection, computerSelection));
+console.log(playGame());
