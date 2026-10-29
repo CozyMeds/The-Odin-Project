@@ -7,6 +7,13 @@ const winner = document.getElementById("winner");
 const pScore = document.getElementById("pScore");
 const cScore = document.getElementById("cScore");
 const tieDisplay = document.getElementById("tie");
+const restartBut = document.getElementById("restart");
+
+restartBut.disabled = true;
+
+let humanScore = 0;
+let computerScore = 0;
+let counter = 0;
 
 function getComputerChoice() {
 	const min = 1;
@@ -24,9 +31,6 @@ function getComputerChoice() {
 }
 
 function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
-    let counter = 0;
 
     rockBut.addEventListener("click", () => {
         playRound("rock");
@@ -41,11 +45,12 @@ function playGame() {
     });
 
     function playRound(playerChoice) {
+		// Stop the game after 5 rounds
+        if (counter >= 5) {
+			return;
+		}
 
-        // Stop the game after 5 rounds
-        if (counter >= 5) return;
-
-        let computerChoice = getComputerChoice();
+		let computerChoice = getComputerChoice();
 
         playersChoice.textContent = playerChoice;
         computersChoice.textContent = computerChoice;
@@ -86,9 +91,24 @@ function playGame() {
                 winner.textContent = "It's a Tie!";
             }
 
+			restartBut.disabled = false;
         }
     }
 }
+
+restartBut.addEventListener("click", () => {
+    humanScore = 0;
+    computerScore = 0;
+    counter = 0;
+
+    pScore.textContent = humanScore;
+    cScore.textContent = computerScore;
+
+    winner.textContent = "";
+    tieDisplay.textContent = "";
+    playersChoice.textContent = "";
+    computersChoice.textContent = "";
+});
 
 
 console.log(playGame());
