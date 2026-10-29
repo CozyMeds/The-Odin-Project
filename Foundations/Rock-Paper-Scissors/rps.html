@@ -6,12 +6,25 @@
         <title>Rock Paper Scissors</title>
     </head>
     <body>
-        <ul>
-            <li>Press F12 to open developer panel</li>
-            <li>Click on 'Console'</li>
-            <li>Enjoy</li>
-        </ul>
         <a href="../../index.html">Main Page</a>
+        <h1>Rock Paper Scissors</h1>
+
+        <div id="butt-container">
+            <button id="rock" type="button">Rock</button>
+            <button id="paper" type="button">Paper</button>
+            <button id="scissors" type="button">Scissors</button>
+        </div>
+
+        <div id="results">
+            <h3>Player: <span id="playersChoice"></span></h3>
+            <h3>Computer: <span id="computersChoice"></span></h3>
+            <h3 id="tie"></h3>
+            <h3>Winner: <span id="winner"></span></h3>
+            <h4>
+                Score: <span id="pScore">0</span>:<span id="cScore">0</span>
+            </h4>
+        </div>
+
         <script src="./main.js"></script>
     </body>
 </html>
