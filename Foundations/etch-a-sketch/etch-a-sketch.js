@@ -1,9 +1,10 @@
 const container = document.getElementById("container");
 const numBoxsId = document.getElementById("numBoxs");
 
-let isValid = false;
+let result = 0;
 
 numBoxsId.addEventListener("click", () => {
+	let isValid = false;
 	while(!isValid) {
 		let numBoxs = prompt("Enter grid size: ");
 		if (numBoxs === null){
@@ -12,12 +13,13 @@ numBoxsId.addEventListener("click", () => {
 		}
 
 		if (numBoxs.trim() === "" || isNaN(numBoxs)){
-			alert("Error: That is not a valid number. Try again.");
+			alert("Error: That is not a valid number.");
 		} else if (numBoxs < 1 || numBoxs > 100) {
 			alert("Error: The number must be between 1 and 100.");
 		} else {
 			isValid = true;
-			result = Number(numBoxs * numBoxs);
+			result = numBoxs ** 2;
+			container.replaceChildren();
 			return displayBoxs(result);
 		}
 	}
@@ -35,5 +37,3 @@ function displayBoxs(data) {
 		container.append(newElement);
 	}	
 }
-
-displayBoxs();
