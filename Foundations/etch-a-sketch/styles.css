@@ -8,12 +8,10 @@
     width: 960px;
     height: 960px;
     box-sizing: border-box;
-    border: 1px solid black;
+    outline: 1px solid black;
 }
 .child-box {
-    border: 1px solid black;
-    width: 60px;
-    height: 60px;
+    outline: 1px solid black;
     text-align: center;
     box-sizing: border-box;
 }

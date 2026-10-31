@@ -1,7 +1,9 @@
 const container = document.getElementById("container");
 const numBoxsId = document.getElementById("numBoxs");
 
-let result = 0;
+let result = Number(0);
+let containerWidth = 960;
+let boxSize = 0;
 
 numBoxsId.addEventListener("click", () => {
 	let isValid = false;
@@ -19,21 +21,23 @@ numBoxsId.addEventListener("click", () => {
 		} else {
 			isValid = true;
 			result = numBoxs ** 2;
+			boxSize = containerWidth / numBoxs;
 			container.replaceChildren();
-			return displayBoxs(result);
+			return displayBoxs(result, boxSize);
 		}
 	}
 });
 
-function displayBoxs(data) {
+function displayBoxs(data, size) {
 	const numOfElements = data;
-	console.log(data)
+	const boxWidthHeight = size
 
 	for (let i = 1; i <= numOfElements; i++) {
 		const newElement = document.createElement("div");
 
 		newElement.classList.add("child-box");
-		newElement.textContent = `${i}`;
+		newElement.style.width = `${boxWidthHeight}px`;
+		newElement.style.height = `${boxWidthHeight}px`;
 		container.append(newElement);
 	}	
 }
